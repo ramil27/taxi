@@ -27,7 +27,6 @@ class JorgoCar(models.Model):
     image = models.ImageField(upload_to='pics')
 
 
-
 class NambaCar(models.Model):
     name = models.CharField(max_length=50)
     color = models.CharField(max_length=15)
@@ -35,7 +34,6 @@ class NambaCar(models.Model):
     size = models.CharField(max_length=10)
     timestamp = models.CharField(max_length=20)
     image = models.ImageField(upload_to='pics')
-
 
 
 class Client(models.Model):
