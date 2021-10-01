@@ -2,7 +2,12 @@ from django import forms
 from .models import Order
 
 
-class contactform(forms.ModelForm):
+class OrderForm(forms.ModelForm):
     class Meta:
-        models = Order
-        fields = [' ']
+        model = Order
+        fields = ['name', 'address', 'phone']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control'}),
+            'address': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control'})
+        }
