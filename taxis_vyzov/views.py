@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from .forms import OrderForm
 from .models import *
 
 
@@ -19,3 +18,8 @@ def register(request):
         return render(request, 'index.html')
     else:
         return render(request, 'index.html')
+
+
+def starter(request):
+    car = Car.objects.all()
+    return render(request, 'index.html', {'car': car})
