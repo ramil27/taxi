@@ -64,6 +64,7 @@
                         </div>
                         <span style="font-size:33px;cursor:pointer; color: #ffffff;" onclick="openNav()"><img
                                 src="{% static 'images/toggle-menu.png' %}" class="toggle_menu"></span>
+                    </ul>
                 </div>
                 </li>
                 </ul>
@@ -88,26 +89,30 @@
                         </div>
                         <div class="col-md-6">
                             <h1 class="booking_text">Book a City Taxi to your destination in town</h1>
+                            <form action ="{% url 'register'%}" method ="POST">
+          {% csrf_token %}
                             <div class="contact_bg">
                                 <div class="input_main">
                                     <div class="container">
-                                        <h2 class="request_text">Your everyday travel register</h2>
-                                        <div class="form-group">
-                                            <input type="text" class="email-bt" placeholder="name">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="email-bt" placeholder="address">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="email-bt" placeholder="phone">
 
-                                        </div>
-                                        </form>
-                                    </div>
+
+
+          <div class="row">
+            <div class="col-md-4 ">
+              <input type="text" class="form-control" name="name" id="name" placeholder="Your Name" required>
+            </div>
+
+            <div class="col-md-4 ">
+              <input type="text" class="form-control" name="address" id="address" placeholder="Your address" required>
+            </div>
+            <div class="col-md-4 ">
+              <input type="text" class="form-control" name="phone" id="phone" placeholder="Your phone" required>
+            </div>
+            </div>
+</form>
                                 </div>
-
-                                <div class="send_bt"><a href="{%url 'register'%}">Submit</a></div>
-                            </div>
+</div>
+<div class="text-center"><button type="submit">Book Table</button></div>                            </div>
                         </div>
                     </div>
                 </div>
@@ -125,28 +130,7 @@
                         <div class="col-md-6">
                             <h1 class="booking_text">Book a City Taxi to your destination in town</h1>
                             <div class="contact_bg">
-                                <div class="input_main">
-                                    <div class="container">
-                                        <h2 class="request_text">Your everyday travel partner</h2>
-                                        <form action="/action_page.php">
 
-                                            <form action="{% url 'register'%}" method="POST">
-                                                {% csrf_token %}
-                                                <div class="form-group">
-                                                    <input type="text" class="email-bt" id="name"
-                                                           placeholder="Your Name" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="email-bt" name="address" id="address"
-                                                           placeholder="Your Address" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="email-bt" name="phone" id="phone"
-                                                           placeholder="Your Phone" required>
-                                                </div>
-                                            </form>
-                                    </div>
-                                </div>
                                 {%endblock%}
                                                                 <div class="text-center">
 
@@ -170,22 +154,7 @@
                         <div class="col-md-6">
                             <h1 class="booking_text">Book a City Taxi to your destination in town</h1>
                             <div class="contact_bg">
-                                <div class="input_main">
-                                    <div class="container">
-                                        <h2 class="request_text">Your everyday travel partner</h2>
-                                        <form action="/action_page.php">
-                                            <div class="form-group">
-                                                <input type="text" class="email-bt" placeholder="PICKUP" name="Name">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="email-bt" placeholder="DROP" name="Email">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="email-bt" placeholder="WHEN" name="Email">
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+
                                 <div class="send_bt"><a href="#">SEARCH</a></div>
                             </div>
                         </div>
@@ -204,16 +173,20 @@
         <div class="taxis_section_2">
             <div class="row">
                 <div class="col-sm-4">
+                    {% for cars in car %}
                     <div class="taxi_main">
-                        <div class="round_1">01</div>
-                        <h2 class="carol_text">CAR 1</h2>
-                        <p class="reader_text">act that a reader will be<br>
+                        <div class="round_1">{{cars.id}}</div>
+                        <h2 class="carol_text">{{cars.title}}</h2>
+                        <p class="reader_text">{{cars.desc}}<br>
                             distracted </p>
-                        <div class="images_2"><a href="#"><img src="{% static 'images/img-2.png' %}"></a></div>
+                        <div class="images_2"><a href="#">
+                            <img src="{{cars.img.url}}"></a></div>
                     </div>
                 </div>
+                {% endfor %}
                 <div class="col-sm-4">
                     <div class="taxi_main">
+
                         <div class="round_1">02</div>
                         <h2 class="carol_text">CAR 2</h2>
                         <p class="reader_text">act that a reader will be<br>
@@ -380,17 +353,17 @@
 </div>
 
 <!-- Javascript files-->
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jquery-3.0.0.min.js"></script>
-<script src="js/plugin.js"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+<script src="{% static 'js/plugin.js' %}"></script>
 <!-- sidebar -->
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
 <!-- javascript -->
-<script src="js/owl.carousel.js"></script>
-<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script src="{% static 'https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js' %}"></script>
 <script>
     $(document).ready(function(){
     $(".fancybox").fancybox({
