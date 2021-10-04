@@ -23,6 +23,6 @@ from taxis_vyzov import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^$', views.home, name='home'),
-    url('', views.register, name='register')
+    url('register', views.register, name='register')
 ]
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
