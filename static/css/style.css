@@ -738,3 +738,6 @@ input.email-bt::placeholder {
     color: #fff;
 }
 
+.row{
+display:flex;
+}
