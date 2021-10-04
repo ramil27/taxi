@@ -178,8 +178,7 @@
                         <h2 class="carol_text">{{ car.title }}</h2>
                         <p class="reader_text">{{ car.desc }}<br>
                         </p>
-                        <div class="images_2"><a href="#">
-                            <img src="{{cars.img.url}}"></a></div>
+                        <div class="images_2"><img src="{{ car.image.url }}"></a></div>
                     </div>
                 </div>
 
@@ -190,7 +189,7 @@
                         <h2 class="carol_text">{{ car.title }}</h2>
                         <p class="reader_text">{{ car.desc }}<br>
                         </p>
-                        <div class="images_2"><img src="{% static 'images/img-2.png' %}"></a></div>
+                        <div class="images_2"><img src="{% static 'images/bmw.jpg' %}"></a></div>
                     </div>
                 </div>
                 <div class="col-sm-4">
@@ -199,7 +198,7 @@
                         <h2 class="carol_text">{{ car.title }}</h2>
                         <p class="reader_text">{{ car.desc }}<br>
                             </p>
-                        <div class="images_2"><img src="{%static 'images/img-2.png' %}"></a></div>
+                        <div class="images_2"><img src="{% static 'images/merc.jpg' %}"></a></div>
                     </div>
                 </div>
                 {% endfor %}
