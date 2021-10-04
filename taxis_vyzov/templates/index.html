@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
 <!-- basic -->
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,14 +23,14 @@
 <!-- fevicon -->
 <link href="{% static 'images/fevicon.png' %}" type="image/gif" rel="icon"  >
 <!-- Scrollbar Custom CSS -->
-<link href="{% css/jquery.mCustomScrollbar.min.css%}" rel="stylesheet">
+<link href="{% static 'css/jquery.mCustomScrollbar.min.css'%}" rel="stylesheet">
 <!-- Tweaks for older IEs-->
-<link href="{%https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css %}" rel="stylesheet" >
+<link href="{% static 'https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' %}" rel="stylesheet" >
 <!-- owl stylesheets -->
-<link href="{%css/owl.carousel.min.css%}" rel="stylesheet" >
-<link href="{%css/owl.theme.default.min.css %}" rel="stylesheet" >
-<link href="{%https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css%}" rel="stylesheet" media="screen">
-=======
+<link href="{% static ' css/owl.carousel.min.css' %}" rel="stylesheet" >
+<link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet" >
+<link href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css' %}" rel="stylesheet" media="screen">
+
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -62,7 +61,7 @@
     <link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
     <link href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css' %}"
           media="screen" rel="stylesheet">
->>>>>>> 3158ee4c54a6c594c93e941abcd67bd2ae5eae9c
+
 
 </head>
 <body>
@@ -95,6 +94,7 @@
                         </div>
                         <span style="font-size:33px;cursor:pointer; color: #ffffff;" onclick="openNav()"><img
                                 src="{% static 'images/toggle-menu.png' %}" class="toggle_menu"></span>
+                    </ul>
                 </div>
                 </li>
                 </ul>
@@ -119,26 +119,33 @@
                         </div>
                         <div class="col-md-6">
                             <h1 class="booking_text">Book a City Taxi to your destination in town</h1>
+                            <form action ="{% url 'register'%}" method ="POST">
+          {% csrf_token %}
                             <div class="contact_bg">
                                 <div class="input_main">
                                     <div class="container">
-                                        <h2 class="request_text">Your everyday travel register</h2>
-                                        <div class="form-group">
-                                            <input type="text" class="email-bt" placeholder="name">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="email-bt" placeholder="address">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="email-bt" placeholder="phone">
 
-                                        </div>
-                                        </form>
-                                    </div>
+
+
+          <div class="row">
+            <div class="col-md-4 ">
+              <input class ="email-bt" type="text"   placeholder="Your Name"
+              name ='Name'>
+            </div>
+
+            <div class="col-md-4 ">
+              <input class ="email-bt" type="text" placeholder="Your address"
+              name="Email">
+            </div>
+            <div class="col-md-4 ">
+              <input class="email-bt"  type="text"  placeholder="Your phone"
+              name="Email">
+            </div>
+            </div>
+</form>
                                 </div>
-
-                                <div class="send_bt"><a href="{%url 'register'%}">Submit</a></div>
-                            </div>
+</div>
+<div class="text-center"><button type="submit">Book Table</button></div>                            </div>
                         </div>
                     </div>
                 </div>
@@ -156,28 +163,7 @@
                         <div class="col-md-6">
                             <h1 class="booking_text">Book a City Taxi to your destination in town</h1>
                             <div class="contact_bg">
-                                <div class="input_main">
-                                    <div class="container">
-                                        <h2 class="request_text">Your everyday travel partner</h2>
-                                        <form action="/action_page.php">
 
-                                            <form action="{% url 'register'%}" method="POST">
-                                                {% csrf_token %}
-                                                <div class="form-group">
-                                                    <input type="text" class="email-bt" id="name"
-                                                           placeholder="Your Name" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="email-bt" name="address" id="address"
-                                                           placeholder="Your Address" required>
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" class="email-bt" name="phone" id="phone"
-                                                           placeholder="Your Phone" required>
-                                                </div>
-                                            </form>
-                                    </div>
-                                </div>
                                 {%endblock%}
                                                                 <div class="text-center">
 
@@ -194,29 +180,14 @@
                         <div class="col-md-6">
                             <div class="book_now">
                                 <h1 class="book_text">BOOK NOW</h1>
-                                <h1 class="call_text">(+71) 1234567890</h1>
+                                <h1 class="call_text">996555555555</h1>
                             </div>
                             <div class="image_1"><img src="{%static 'images/car.png' %}"></div>
                         </div>
                         <div class="col-md-6">
                             <h1 class="booking_text">Book a City Taxi to your destination in town</h1>
                             <div class="contact_bg">
-                                <div class="input_main">
-                                    <div class="container">
-                                        <h2 class="request_text">Your everyday travel partner</h2>
-                                        <form action="/action_page.php">
-                                            <div class="form-group">
-                                                <input type="text" class="email-bt" placeholder="PICKUP" name="Name">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="email-bt" placeholder="DROP" name="Email">
-                                            </div>
-                                            <div class="form-group">
-                                                <input type="text" class="email-bt" placeholder="WHEN" name="Email">
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+
                                 <div class="send_bt"><a href="#">SEARCH</a></div>
                             </div>
                         </div>
@@ -235,16 +206,20 @@
         <div class="taxis_section_2">
             <div class="row">
                 <div class="col-sm-4">
+                    {% for cars in car %}
                     <div class="taxi_main">
-                        <div class="round_1">01</div>
-                        <h2 class="carol_text">CAR 1</h2>
-                        <p class="reader_text">act that a reader will be<br>
+                        <div class="round_1">{{cars.id}}</div>
+                        <h2 class="carol_text">{{cars.title}}</h2>
+                        <p class="reader_text">{{cars.desc}}<br>
                             distracted </p>
-                        <div class="images_2"><a href="#"><img src="{% static 'images/img-2.png' %}"></a></div>
+                        <div class="images_2"><a href="#">
+                            <img src="{{cars.img.url}}"></a></div>
                     </div>
                 </div>
+                {% endfor %}
                 <div class="col-sm-4">
                     <div class="taxi_main">
+
                         <div class="round_1">02</div>
                         <h2 class="carol_text">CAR 2</h2>
                         <p class="reader_text">act that a reader will be<br>
@@ -411,17 +386,17 @@
 </div>
 
 <!-- Javascript files-->
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.bundle.min.js"></script>
-<script src="js/jquery-3.0.0.min.js"></script>
-<script src="js/plugin.js"></script>
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/jquery-3.0.0.min.js' %}"></script>
+<script src="{% static 'js/plugin.js' %}"></script>
 <!-- sidebar -->
-<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
-<script src="js/custom.js"></script>
+<script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+<script src="{% static 'js/custom.js' %}"></script>
 <!-- javascript -->
-<script src="js/owl.carousel.js"></script>
-<script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+<script src="{% static 'js/owl.carousel.js' %}"></script>
+<script src="{% static 'https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js' %}"></script>
 <script>
     $(document).ready(function(){
     $(".fancybox").fancybox({
