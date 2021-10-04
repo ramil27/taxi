@@ -62,8 +62,7 @@
                                 <a href="#contact">Contact Us</a>
                             </div>
                         </div>
-                        <span style="font-size:33px;cursor:pointer; color: #ffffff;" onclick="openNav()"><img
-                                src="{% static 'images/toggle-menu.png' %}" class="toggle_menu"></span>
+
                     </ul>
                 </div>
                 </li>
@@ -173,36 +172,37 @@
         <div class="taxis_section_2">
             <div class="row">
                 <div class="col-sm-4">
-                    {% for cars in car %}
+                    {% for car in cars %}
                     <div class="taxi_main">
-                        <div class="round_1">{{cars.id}}</div>
-                        <h2 class="carol_text">{{cars.title}}</h2>
-                        <p class="reader_text">{{cars.desc}}<br>
-                            distracted </p>
+                        <div class="round_1">{{ car.id }}</div>
+                        <h2 class="carol_text">{{ car.title }}</h2>
+                        <p class="reader_text">{{ car.desc }}<br>
+                        </p>
                         <div class="images_2"><a href="#">
                             <img src="{{cars.img.url}}"></a></div>
                     </div>
                 </div>
-                {% endfor %}
+
                 <div class="col-sm-4">
                     <div class="taxi_main">
 
-                        <div class="round_1">02</div>
-                        <h2 class="carol_text">CAR 2</h2>
-                        <p class="reader_text">act that a reader will be<br>
-                            distracted </p>
+                        <div class="round_1">{{ car.id }}</div>
+                        <h2 class="carol_text">{{ car.title }}</h2>
+                        <p class="reader_text">{{ car.desc }}<br>
+                        </p>
                         <div class="images_2"><img src="{% static 'images/img-2.png' %}"></a></div>
                     </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="taxi_main">
-                        <div class="round_1">03</div>
-                        <h2 class="carol_text">CAR 3</h2>
-                        <p class="reader_text">act that a reader will be<br>
-                            distracted </p>
+                        <div class="round_1">{{ car.id }}</div>
+                        <h2 class="carol_text">{{ car.title }}</h2>
+                        <p class="reader_text">{{ car.desc }}<br>
+                            </p>
                         <div class="images_2"><img src="{%static 'images/img-2.png' %}"></a></div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
