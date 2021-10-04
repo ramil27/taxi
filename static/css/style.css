@@ -221,6 +221,10 @@ button {
     position: fixed;
     z-index: 01;
 }
+.row-boot input{
+display:block !important;
+background:red;
+{
 
 .logo {
     width: 100%;
