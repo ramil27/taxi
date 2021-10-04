@@ -3,7 +3,8 @@ from .models import *
 
 
 def home(request):
-    return render(request, 'index.html')
+    cars = Car.objects.all()
+    return render(request, 'index.html', {'cars': cars})
 
 
 def register(request):
